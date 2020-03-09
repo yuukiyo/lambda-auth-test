@@ -1,0 +1,27 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-lambda-auth-test-dev-212849-authRole",
+            "UnauthRoleArn": "arn:aws:iam::423610319017:role/amplify-lambda-auth-test-dev-212849-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::423610319017:role/amplify-lambda-auth-test-dev-212849-authRole",
+            "Region": "ap-northeast-1",
+            "DeploymentBucketName": "amplify-lambda-auth-test-dev-212849-deployment",
+            "UnauthRoleName": "amplify-lambda-auth-test-dev-212849-unauthRole",
+            "StackName": "amplify-lambda-auth-test-dev-212849",
+            "StackId": "arn:aws:cloudformation:ap-northeast-1:423610319017:stack/amplify-lambda-auth-test-dev-212849/df2680c0-5edc-11ea-aba3-06219e647854",
+            "AmplifyAppId": "d2llflvb4ydbug"
+        },
+        "categories": {
+            "auth": {
+                "lambdaauthtest7bfe6e62": {}
+            },
+            "function": {
+                "lambdaauthtest7bfe6e62CreateAuthChallenge": {
+                    "CHALLENGEANSWER": ""
+                },
+                "lambdaauthtest7bfe6e62DefineAuthChallenge": {},
+                "lambdaauthtest7bfe6e62VerifyAuthChallengeResponse": {}
+            }
+        }
+    }
+}

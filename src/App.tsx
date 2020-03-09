@@ -1,13 +1,12 @@
 import React from 'react';
-import PizzaContainer from './pizzaContainer';
-// import { withAuthenticator } from 'aws-amplify-react';
+import SignInContainer from './signInContainer';
 
 const App: React.FC = () => {
   return (
     <>
-      <PizzaContainer />
+      <SignInContainer />
     </>
   );
 }
 
-export default (App);
+export default App

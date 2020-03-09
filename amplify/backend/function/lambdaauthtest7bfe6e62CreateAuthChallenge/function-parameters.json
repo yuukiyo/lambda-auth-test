@@ -1,0 +1,14 @@
+{
+    "trigger": true,
+    "modules": [
+        "boilerplate-create-challenge"
+    ],
+    "parentResource": "lambdaauthtest7bfe6e62",
+    "functionName": "lambdaauthtest7bfe6e62CreateAuthChallenge",
+    "parentStack": "auth",
+    "triggerEnvs": "[]",
+    "triggerTemplate": "CreateAuthChallenge.json.ejs",
+    "roleName": "lambdaauthtest7bfe6e62CreateAuthChallenge",
+    "skipEdit": true,
+    "resourceName": "lambdaauthtest7bfe6e62CreateAuthChallenge"
+}

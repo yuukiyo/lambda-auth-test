@@ -1,0 +1,14 @@
+{
+    "trigger": true,
+    "modules": [
+        "boilerplate-verify"
+    ],
+    "parentResource": "lambdaauthtest7bfe6e62",
+    "functionName": "lambdaauthtest7bfe6e62VerifyAuthChallengeResponse",
+    "parentStack": "auth",
+    "triggerEnvs": "[]",
+    "triggerTemplate": "VerifyAuthChallengeResponse.json.ejs",
+    "roleName": "lambdaauthtest7bfe6e62VerifyAuthChallengeResponse",
+    "skipEdit": true,
+    "resourceName": "lambdaauthtest7bfe6e62VerifyAuthChallengeResponse"
+}
