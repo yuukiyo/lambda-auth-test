@@ -7,8 +7,10 @@
     "functionName": "lambdaauthtest7bfe6e62DefineAuthChallenge",
     "parentStack": "auth",
     "triggerEnvs": "[]",
-    "triggerTemplate": "DefineAuthChallenge.json.ejs",
+    "triggerDir": "/Users/yuyoshd/.anyenv/envs/nodenv/versions/12.13.0/lib/node_modules/@aws-amplify/cli/node_modules/amplify-category-auth/provider-utils/awscloudformation/utils/../triggers/DefineAuthChallenge",
     "roleName": "lambdaauthtest7bfe6e62DefineAuthChallenge",
+    "triggerTemplate": "DefineAuthChallenge.json.ejs",
+    "triggerEventPath": "DefineAuthChallenge.event.json",
     "skipEdit": true,
     "resourceName": "lambdaauthtest7bfe6e62DefineAuthChallenge"
 }

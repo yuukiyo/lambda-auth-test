@@ -6,11 +6,19 @@ export interface SignInForm {
     password: string
 }
 
+export interface SignUpForm {
+    username: string,
+    password: string,
+    email: string
+}
+
 export interface State {
     username: string,
     price: number,
     quantity: number,
-    signInForm: SignInForm
+    signInForm: SignInForm,
+    signUpForm: SignUpForm,
+    isSignUpPage: boolean
 }
 
 const initialState: State = {
@@ -20,7 +28,13 @@ const initialState: State = {
     signInForm: {
         username: "",
         password: ""
-    }
+    },
+    signUpForm: {
+        username: "",
+        password: "",
+        email: ""
+    },
+    isSignUpPage: false
 }
 
 export const Reducers = reducerWithInitialState(initialState)
@@ -35,4 +49,10 @@ export const Reducers = reducerWithInitialState(initialState)
     })
     .case(Actions.updateSignInForm, (state, signInForm) => {
         return Object.assign({}, state, { signInForm })
+    })
+    .case(Actions.updateSignUpForm, (state, signUpForm) => {
+        return Object.assign({}, state, { signUpForm })
+    })
+    .case(Actions.updateToggleSignUpPage, (state, isSignUpPage) => {
+        return Object.assign({}, state, { isSignUpPage })
     })

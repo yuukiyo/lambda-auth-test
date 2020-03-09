@@ -91,32 +91,84 @@ export const SignInComponent: React.FC<Props> = (props: Props) => {
                 </div>
                 :
                 <div>
-                    <div className={classes.textfieldWrapper}>
-                        <Typography variant="h6">ログインして下さい</Typography>
-                        <TextField
-                            className={classes.textfield}
-                            label="username"
-                            variant="outlined"
-                            fullWidth
-                            value={props.signInForm.username}
-                            onChange={(e) => {props.hundleUpdateSigInForm(e.target.value, props.signInForm.password)}}
-                        />
-                        <TextField
-                            className={classes.textfield}
-                            label="password"
-                            variant="outlined"
-                            fullWidth
-                            value={props.signInForm.password}
-                            type="password"
-                            onChange={(e) => {props.hundleUpdateSigInForm(props.signInForm.username, e.target.value)}}
-                        />
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            className={classes.signInButton}
-                            onClick={() => props.hundleSignIn(props.signInForm)}
-                        >ログイン</Button>
-                    </div>
+                    {props.isSignUpPage ?
+                        <div className={classes.textfieldWrapper}>
+                            <Typography variant="h6">サインアップして下さい</Typography>
+                            <TextField
+                                className={classes.textfield}
+                                label="username"
+                                variant="outlined"
+                                fullWidth
+                                value={props.signUpForm.username}
+                                onChange={(e) => { props.hundleUpdateSigUpForm(e.target.value, props.signUpForm.password, props.signUpForm.email) }}
+                            />
+                            <TextField
+                                className={classes.textfield}
+                                label="password"
+                                variant="outlined"
+                                fullWidth
+                                value={props.signUpForm.password}
+                                type="password"
+                                onChange={(e) => { props.hundleUpdateSigUpForm(props.signUpForm.username, e.target.value, props.signUpForm.email) }}
+                            />
+                            <TextField
+                                className={classes.textfield}
+                                label="emailアドレス"
+                                variant="outlined"
+                                fullWidth
+                                value={props.signUpForm.email}
+                                onChange={(e) => { props.hundleUpdateSigUpForm(props.signUpForm.username, props.signUpForm.password, e.target.value) }}
+                            />
+                            <Button
+                                variant="contained"
+                                color="secondary"
+                                className={classes.signInButton}
+                                onClick={() => props.hundleSignUp(props.signUpForm)}
+                            >登録</Button>
+                            <div>
+                                <Button
+                                    variant="contained"
+                                    color="secondary"
+                                    className={classes.signInButton}
+                                    onClick={() => props.hundleToggleSignUpPage(props.isSignUpPage)}
+                                >ログインへ</Button>
+                            </div>
+                        </div> :
+                        <div className={classes.textfieldWrapper}>
+                            <Typography variant="h6">ログインして下さい</Typography>
+                            <TextField
+                                className={classes.textfield}
+                                label="username"
+                                variant="outlined"
+                                fullWidth
+                                value={props.signInForm.username}
+                                onChange={(e) => { props.hundleUpdateSigInForm(e.target.value, props.signInForm.password) }}
+                            />
+                            <TextField
+                                className={classes.textfield}
+                                label="password"
+                                variant="outlined"
+                                fullWidth
+                                value={props.signInForm.password}
+                                type="password"
+                                onChange={(e) => { props.hundleUpdateSigInForm(props.signInForm.username, e.target.value) }}
+                            />
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                className={classes.signInButton}
+                                onClick={() => props.hundleSignIn(props.signInForm)}
+                            >ログイン</Button>
+                            <div>
+                                <Button
+                                    variant="contained"
+                                    color="primary"
+                                    className={classes.signInButton}
+                                    onClick={() => props.hundleToggleSignUpPage(props.isSignUpPage)}
+                                >サインアップへ</Button>
+                            </div>
+                        </div>
+                    }
                 </div>
             }
         </>

@@ -19,12 +19,12 @@ export class CognitoService {
         const result = await Auth.signOut()
         return result
     }
-    static signUp = async (email: string, name: string, password: string) => {
+    static signUp = async (username: string, password: string, email: string) => {
         const result = await Auth.signUp({
-            username: email,
+            username: username,
             password: password,
             attributes: {
-                name: name
+                email: email
             },
             validationData: []  //optional
         })

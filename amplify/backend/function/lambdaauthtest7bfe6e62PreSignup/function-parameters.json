@@ -1,0 +1,14 @@
+{
+    "trigger": true,
+    "modules": [
+        "custom"
+    ],
+    "parentResource": "lambdaauthtest7bfe6e62",
+    "functionName": "lambdaauthtest7bfe6e62PreSignup",
+    "parentStack": "auth",
+    "triggerEnvs": "[]",
+    "triggerTemplate": "PreSignup.json.ejs",
+    "roleName": "lambdaauthtest7bfe6e62PreSignup",
+    "skipEdit": true,
+    "resourceName": "lambdaauthtest7bfe6e62PreSignup"
+}

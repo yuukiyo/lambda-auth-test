@@ -6,7 +6,8 @@ import { Actions } from "./action";
 import Amplify, { Auth } from 'aws-amplify'
 import awsconfig from './aws-exports'
 import { CognitoService } from "./CognitoService";
-import { SignInForm } from "./reducer";
+import { SignInForm, SignUpForm } from "./reducer";
+import { emphasize } from "@material-ui/core";
 
 Amplify.configure(awsconfig);
 Auth.configure({
@@ -16,10 +17,13 @@ Auth.configure({
 export interface signInHundler {
     hundleInit(): void
     hundleSignIn(signInForm: SignInForm): void
+    hundleSignUp(signUpForm: SignUpForm): void
     handleSignOut(): void
     hundleOrder(username: string, price: number): void
     hundleUpdateQuantity(event: any, newValue: number | number[]): void
     hundleUpdateSigInForm(username: string, password: string): void
+    hundleUpdateSigUpForm(username: string, password: string, email: string): void
+    hundleToggleSignUpPage(toggle: boolean): void
 }
 
 const hundleInit = () => async (dispatch: Dispatch) => {
@@ -51,6 +55,15 @@ const hundleUpdateSigInForm = (username: string, password: string) => async (dis
     dispatch(Actions.updateSignInForm(signInForm))
 }
 
+const hundleUpdateSigUpForm = (username: string, password: string, email: string) => async (dispatch: Dispatch) => {
+    const signUpForm: SignUpForm = {
+        username: username,
+        password: password,
+        email: email
+    }
+    dispatch(Actions.updateSignUpForm(signUpForm))
+}
+
 const hundleOrder = (username: string, price: number) => async () => {
     console.log(username)
     console.log(price)
@@ -65,6 +78,16 @@ const hundleSignIn = (signInForm: SignInForm) => async (dispatch: Dispatch) => {
     }
 }
 
+const hundleSignUp = (signUpForm: SignUpForm) => async (dispatch: Dispatch) => {
+    console.log(signUpForm)
+    const result = await CognitoService.signUp(
+        signUpForm.username,
+        signUpForm.password,
+        signUpForm.email
+    )
+    console.log(result)
+}
+
 const handleSignOut = () => async (dispatch: Dispatch) => {
     await CognitoService.signOut()
     const signInForm: SignInForm = {
@@ -75,6 +98,11 @@ const handleSignOut = () => async (dispatch: Dispatch) => {
     dispatch(Actions.updateUsername(""))
 }
 
+const hundleToggleSignUpPage = (toggle: boolean) => async (dispatch: Dispatch) => {
+    let isSignUpPage = toggle ? false : true
+    dispatch(Actions.updateToggleSignUpPage(isSignUpPage))
+}
+
 const mapStateToProps = (appState: AppState) => {
     return Object.assign({}, appState.state, {
         username: appState.state.username,
@@ -83,8 +111,11 @@ const mapStateToProps = (appState: AppState) => {
 export default connect(mapStateToProps, {
     hundleInit,
     hundleSignIn,
+    hundleSignUp,
     handleSignOut,
     hundleOrder,
     hundleUpdateQuantity,
-    hundleUpdateSigInForm
+    hundleUpdateSigInForm,
+    hundleUpdateSigUpForm,
+    hundleToggleSignUpPage
 })(SignInComponent)

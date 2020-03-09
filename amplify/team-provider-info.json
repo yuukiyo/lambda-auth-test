@@ -20,7 +20,8 @@
                     "CHALLENGEANSWER": ""
                 },
                 "lambdaauthtest7bfe6e62DefineAuthChallenge": {},
-                "lambdaauthtest7bfe6e62VerifyAuthChallengeResponse": {}
+                "lambdaauthtest7bfe6e62VerifyAuthChallengeResponse": {},
+                "lambdaauthtest7bfe6e62PreSignup": {}
             }
         }
     }

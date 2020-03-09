@@ -73,12 +73,21 @@
                 "Arn",
                 "Name"
             ]
+        },
+        {
+            "category": "function",
+            "resourceName": "lambdaauthtest7bfe6e62PreSignup",
+            "triggerProvider": "Cognito",
+            "attributes": [
+                "Arn",
+                "Name"
+            ]
         }
     ],
     "thirdPartyAuth": false,
     "userPoolGroups": false,
     "adminQueries": false,
-    "triggers": "{\"CreateAuthChallenge\":[\"boilerplate-create-challenge\"],\"DefineAuthChallenge\":[\"boilerplate-define-challenge\"],\"VerifyAuthChallengeResponse\":[\"boilerplate-verify\"]}",
+    "triggers": "{\"CreateAuthChallenge\":[\"boilerplate-create-challenge\"],\"DefineAuthChallenge\":[\"boilerplate-define-challenge\"],\"PreSignup\":[\"custom\"],\"VerifyAuthChallengeResponse\":[\"boilerplate-verify\"]}",
     "hostedUI": false,
     "parentStack": {
         "Ref": "AWS::StackId"

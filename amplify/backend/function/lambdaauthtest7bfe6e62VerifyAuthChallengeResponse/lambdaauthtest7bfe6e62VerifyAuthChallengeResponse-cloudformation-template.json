@@ -102,7 +102,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-lambda-auth-test-dev-212849-deployment",
-					"S3Key": "amplify-builds/lambdaauthtest7bfe6e62VerifyAuthChallengeResponse-6647693257634d4f7645-build.zip"
+					"S3Key": "amplify-builds/lambdaauthtest7bfe6e62VerifyAuthChallengeResponse-65533854473846377255-build.zip"
 				}
 			}
 		},

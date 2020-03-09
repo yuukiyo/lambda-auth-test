@@ -7,8 +7,10 @@
     "functionName": "lambdaauthtest7bfe6e62VerifyAuthChallengeResponse",
     "parentStack": "auth",
     "triggerEnvs": "[]",
-    "triggerTemplate": "VerifyAuthChallengeResponse.json.ejs",
+    "triggerDir": "/Users/yuyoshd/.anyenv/envs/nodenv/versions/12.13.0/lib/node_modules/@aws-amplify/cli/node_modules/amplify-category-auth/provider-utils/awscloudformation/utils/../triggers/VerifyAuthChallengeResponse",
     "roleName": "lambdaauthtest7bfe6e62VerifyAuthChallengeResponse",
+    "triggerTemplate": "VerifyAuthChallengeResponse.json.ejs",
+    "triggerEventPath": "VerifyAuthChallengeResponse.event.json",
     "skipEdit": true,
     "resourceName": "lambdaauthtest7bfe6e62VerifyAuthChallengeResponse"
 }

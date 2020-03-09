@@ -2,7 +2,11 @@
 	"AWSTemplateFormatVersion": "2010-09-09",
 	"Description": "Lambda resource stack creation using Amplify CLI",
 	"Parameters": {
-		"CHALLENGEANSWER": {
+		"DOMAINBLACKLIST": {
+			"Type": "String",
+			"Default": ""
+		},
+		"DOMAINWHITELIST": {
 			"Type": "String",
 			"Default": ""
 		},
@@ -61,12 +65,12 @@
 				"FunctionName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"lambdaauthtest7bfe6e62CreateAuthChallenge",
+						"lambdaauthtest7bfe6e62PreSignup",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"lambdaauthtest7bfe6e62CreateAuthChallenge",
+									"lambdaauthtest7bfe6e62PreSignup",
 									"-",
 									{
 										"Ref": "env"
@@ -87,8 +91,11 @@
 						"REGION": {
 							"Ref": "AWS::Region"
 						},
-						"CHALLENGEANSWER": {
-							"Ref": "CHALLENGEANSWER"
+						"DOMAINWHITELIST": {
+							"Ref": "DOMAINWHITELIST"
+						},
+						"DOMAINBLACKLIST": {
+							"Ref": "DOMAINBLACKLIST"
 						}
 					}
 				},
@@ -102,7 +109,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "amplify-lambda-auth-test-dev-212849-deployment",
-					"S3Key": "amplify-builds/lambdaauthtest7bfe6e62CreateAuthChallenge-3439515a75475365694b-build.zip"
+					"S3Key": "amplify-builds/lambdaauthtest7bfe6e62PreSignup-2b314e42655871513950-build.zip"
 				}
 			}
 		},
@@ -112,12 +119,12 @@
 				"RoleName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"lambdaauthtest7bfe6e62CreateAuthChallenge",
+						"lambdaauthtest7bfe6e62PreSignup",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"lambdaauthtest7bfe6e62CreateAuthChallenge",
+									"lambdaauthtest7bfe6e62PreSignup",
 									"-",
 									{
 										"Ref": "env"

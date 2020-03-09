@@ -41,6 +41,16 @@ Parameters:
   
   
   
+  functionlambdaauthtest7bfe6e62PreSignupArn: 
+    Type: String
+    Default: functionlambdaauthtest7bfe6e62PreSignupArn
+  
+  functionlambdaauthtest7bfe6e62PreSignupName: 
+    Type: String
+    Default: functionlambdaauthtest7bfe6e62PreSignupName
+  
+  
+  
 
     
   identityPoolName:
@@ -135,13 +145,13 @@ Parameters:
                 
   hostedUI:
     Type: String
-                              
+                  
   parentStack:
     Type: String
                 
   permissions:
     Type: CommaDelimitedList
-    
+                
 Conditions:
   ShouldNotCreateEnvResources: !Equals [ !Ref env, NONE ]
 
@@ -207,6 +217,8 @@ Resources:
         
         
         
+          PreSignUp: !Ref functionlambdaauthtest7bfe6e62PreSignupArn
+        
         
         
           VerifyAuthChallengeResponse: !Ref functionlambdaauthtest7bfe6e62VerifyAuthChallengeResponseArn
@@ -258,6 +270,15 @@ Resources:
     
     
   
+  
+  UserPoolPreSignupLambdaInvokePermission: 
+    Type: "AWS::Lambda::Permission"
+    DependsOn: UserPool
+    Properties: 
+      Action: "lambda:invokeFunction"
+      Principal: "cognito-idp.amazonaws.com"
+      FunctionName: !Ref functionlambdaauthtest7bfe6e62PreSignupName
+      SourceArn: !GetAtt UserPool.Arn
   
    
   
